@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;600&display=swap');
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -60,7 +62,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --soft-purple: #495579;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;600&display=swap');
+/* Estilos generales */
 
 body {
   font-family: 'Roboto Mono', monospace;
@@ -88,4 +90,18 @@ header {
 
 #links a:visited {
   color: var(--mid-purple)
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Estilos clase-1 */
+
+.clase-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
