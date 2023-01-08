@@ -1,16 +1,16 @@
 type Conf = {
-  el: HTMLVideoElement | null
-}
+  el: HTMLVideoElement | null;
+};
 
 export class MediaPlayer {
   media: HTMLVideoElement | null;
 
   constructor(config: Conf) {
-    this.media = config.el
+    this.media = config.el;
   }
 
   play() {
-    this.media?.play()
+    this.media?.play();
   }
 
   pause() {

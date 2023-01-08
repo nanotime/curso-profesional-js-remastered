@@ -3,7 +3,9 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /*
@@ -15,7 +17,8 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%;
 }
 /*
@@ -30,34 +33,48 @@ body {
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 :root {
   --white: #fff;
   --black: #000;
-  --soft-black: #3C4048;
-  --beige: #FFFBEB;
+  --soft-black: #3c4048;
+  --beige: #fffbeb;
   --mid-purple: #263159;
   --soft-purple: #495579;
 }
@@ -81,7 +98,7 @@ body {
 header {
   text-align: center;
   margin-bottom: 12px;
-  color: var(--soft-purple)
+  color: var(--soft-purple);
 }
 
 #links a {
@@ -90,12 +107,30 @@ header {
 }
 
 #links a:visited {
-  color: var(--mid-purple)
+  color: var(--mid-purple);
 }
 
 .container {
   width: 100%;
   height: 100vh;
+}
+
+.btn-back {
+  background-color: var(--soft-black);
+  border-radius: 4px;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-back a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.btn-back a:visited {
+  color: var(--beige);
 }
 
 /* Estilos clase-1 */
@@ -105,4 +140,35 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Estilos Closures */
+
+.clase-closures {
+  align-items: center;
+  background-color: var(--beige);
+  color: var(--soft-purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clase-closures__buttons {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.clase-closures__buttons button {
+  background-color: var(--soft-purple);
+  color: var(--white);
+  border-radius: 4px;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.clase-closures__buttons button:hover,
+.clase-closures__buttons button:active {
+  background-color: var(--mid-purple);
 }
