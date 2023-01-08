@@ -86,6 +86,7 @@ header {
 
 #links a {
   text-decoration: none;
+  display: block;
 }
 
 #links a:visited {
