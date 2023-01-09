@@ -1,4 +1,4 @@
-import { MediaPlayer } from './clase-1';
+import { MediaPlayer } from './player';
 
 export class AutoPlay {
   run(player: MediaPlayer) {

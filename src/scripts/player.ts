@@ -44,5 +44,12 @@ export class MediaPlayer {
 const video = document.querySelector('video');
 const player = new MediaPlayer({ el: video, plugins: [new AutoPlay()] });
 
-const button = document.querySelector('button');
-button?.addEventListener('click', () => player.togglePlay());
+const btnPlay = document.querySelector(
+  'button#play-pause'
+) as HTMLButtonElement;
+btnPlay.addEventListener('click', () => player.togglePlay());
+
+const btnMute = document.querySelector(
+  'button#mute-unmute'
+) as HTMLButtonElement;
+btnMute.addEventListener('click', () => player.toggleMute());
