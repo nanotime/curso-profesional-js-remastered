@@ -1,12 +1,27 @@
-type Conf = {
+import { AutoPlay } from './autoPlayPlugin';
+
+export interface Plugin {
+  run: (player: MediaPlayer) => void;
+}
+
+interface Config {
   el: HTMLVideoElement | null;
-};
+  plugins?: Plugin[];
+}
 
 export class MediaPlayer {
   media: HTMLVideoElement | null;
+  plugins: Plugin[];
 
-  constructor(config: Conf) {
+  constructor(config: Config) {
     this.media = config.el;
+    this.plugins = config.plugins || [];
+
+    this.initPlugins();
+  }
+
+  initPlugins() {
+    this.plugins.forEach(plugin => plugin.run(this));
   }
 
   play() {
@@ -20,10 +35,14 @@ export class MediaPlayer {
   togglePlay() {
     this.media?.paused ? this.media.play() : this.media?.pause();
   }
+
+  toggleMute() {
+    if (this.media) this.media.muted = !this.media.muted;
+  }
 }
 
 const video = document.querySelector('video');
-const player = new MediaPlayer({ el: video });
+const player = new MediaPlayer({ el: video, plugins: [new AutoPlay()] });
 
 const button = document.querySelector('button');
 button?.addEventListener('click', () => player.togglePlay());
