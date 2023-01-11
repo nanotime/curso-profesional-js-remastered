@@ -16,5 +16,9 @@
     "prettier": "^2.8.2",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "@types/fast-levenshtein": "^0.0.2",
+    "fast-levenshtein": "^3.0.0"
   }
 }
