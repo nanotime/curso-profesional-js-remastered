@@ -81,3 +81,18 @@ export {};
 // list = [1,2,3,4,5]
 // page = paginate(list, 3)
 // page.next() ---> [1,2,3]
+
+function* paginator(list: number[], pageSize = 1) {
+  for (let index = 0; index < list.length; index += pageSize) {
+    yield list.slice(index, index + pageSize);
+  }
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const paged = paginator(arr, 3);
+
+console.group('Paginator');
+for (let index = 0; index < 4; index++) {
+  console.log(paged.next());
+}
+console.groupEnd();
